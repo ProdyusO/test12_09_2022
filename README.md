@@ -1,0 +1,1 @@
+The task wasn't completed, there are problems with writing to the database. The error is clear, I have to  rewrite the parser's code in another way. It seems to me, the parser works not bad. I'll continue to write this task but according agreement with Yana my time was end.
