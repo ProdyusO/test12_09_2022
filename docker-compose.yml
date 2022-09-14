@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    container_name: web_service
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8002:8000"
+    env_file:
+      - .web_env.dev
+    depends_on:
+      - db
+
+
+  db:
+    image: postgres:12.0
+    container_name: db_service
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    env_file:
+      - .db_env.dev
+
+volumes:
+  postgres_data:
+    name: db_data
